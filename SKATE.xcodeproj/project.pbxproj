@@ -11,6 +11,10 @@
 		3209D9732921F55D002555EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209D9722921F55D002555EE /* ContentView.swift */; };
 		3209D9752921F55E002555EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3209D9742921F55E002555EE /* Assets.xcassets */; };
 		3209D9782921F55E002555EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3209D9772921F55E002555EE /* Preview Assets.xcassets */; };
+		3209D97F2921FE20002555EE /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209D97E2921FE20002555EE /* Test.swift */; };
+		32BEFF532922D7410063F011 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF522922D7410063F011 /* HomeView.swift */; };
+		32BEFF552922D8A00063F011 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF542922D8A00063F011 /* ViewManager.swift */; };
+		32BEFF592922E2550063F011 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF582922E2550063F011 /* BoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		3209D9722921F55D002555EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3209D9742921F55E002555EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3209D9772921F55E002555EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3209D97E2921FE20002555EE /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		32BEFF522922D7410063F011 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		32BEFF542922D8A00063F011 /* ViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
+		32BEFF582922E2550063F011 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +59,13 @@
 		3209D96F2921F55D002555EE /* SKATE */ = {
 			isa = PBXGroup;
 			children = (
+				324295B02923363C007A07D5 /* Models */,
+				324295AF29233594007A07D5 /* ViewModels */,
+				32BEFF512922D6EB0063F011 /* Views */,
 				3209D9702921F55D002555EE /* SKATEApp.swift */,
-				3209D9722921F55D002555EE /* ContentView.swift */,
 				3209D9742921F55E002555EE /* Assets.xcassets */,
 				3209D9762921F55E002555EE /* Preview Content */,
+				3209D97E2921FE20002555EE /* Test.swift */,
 			);
 			path = SKATE;
 			sourceTree = "<group>";
@@ -65,6 +76,31 @@
 				3209D9772921F55E002555EE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		324295AF29233594007A07D5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				32BEFF542922D8A00063F011 /* ViewManager.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		324295B02923363C007A07D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32BEFF512922D6EB0063F011 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3209D9722921F55D002555EE /* ContentView.swift */,
+				32BEFF522922D7410063F011 /* HomeView.swift */,
+				32BEFF582922E2550063F011 /* BoardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +174,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3209D9732921F55D002555EE /* ContentView.swift in Sources */,
+				32BEFF532922D7410063F011 /* HomeView.swift in Sources */,
+				32BEFF552922D8A00063F011 /* ViewManager.swift in Sources */,
+				32BEFF592922E2550063F011 /* BoardView.swift in Sources */,
+				3209D97F2921FE20002555EE /* Test.swift in Sources */,
 				3209D9712921F55D002555EE /* SKATEApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

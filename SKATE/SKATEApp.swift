@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SKATEApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ViewManager())
         }
     }
 }

@@ -16,33 +16,39 @@ struct ContentView: View {
         VStack {
             ZStack {
                 
-                Image("skater")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .ignoresSafeArea(edges: .all)
+                ImageSlider()
+                    .ignoresSafeArea()
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+
                 
                     
                 
                 VStack {
-                    Image("skatelogo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: .infinity, maxHeight: 150*scene.logoScale)
-                        .scaleEffect(scene.logoScale)
-                        .onTapGesture {
-                            withAnimation(.spring(blendDuration: 1.0)){
-                                scene.op = 0.0
-                                scene.buy = false
-                                scene.logoScale = 1.0
-                                scene.logoOffset = -20
-                            }
+                        Image("skatelogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: .infinity, maxHeight: 150*scene.logoScale)
+                            .scaleEffect(scene.logoScale)
+                            .onTapGesture {
+                                withAnimation(.spring(blendDuration: 1.0)){
+                                    scene.op = 0.0
+                                    scene.board = false
+                                    scene.logoScale = 1.0
+                                    scene.logoOffset = -20
+                                }
                         }
+                        
+                  
 
-                    if !scene.buy {
+                    if !scene.board{
+                        Spacer()
                         HomeView()
+                            .frame(maxWidth: .infinity, maxHeight: 100)
+                            
                             
                     } else {
                         BoardView()
+                            //.padding([.trailing, .leading])
                     }
 
                 }

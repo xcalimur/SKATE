@@ -19,46 +19,17 @@ struct HomeView: View {
             .ignoresSafeArea(edges: .bottom)
             
             VStack {
-                Spacer()
                 
                 HStack {
-                    Spacer()
-                    Circle()
-                        .foregroundColor(.white)
-                        .shadow(radius: 15)
-                        .padding()
-                        .frame(width:120)
-                        .overlay {
-                            Image(systemName: "banknote")
-                                .font(.system(size: 40))
-                                .foregroundColor(.red)
-                        }
-                        .onTapGesture {
-                            withAnimation(.spring(blendDuration: 1.0)){
-                                scene.buy.toggle()
-                                scene.logoScale = 0.7
-                                scene.logoOffset = -50
-                            }
-                            
-                        }
-                    
-                    Spacer()
-                    Spacer()
-                    
-                    Circle()
-                        .foregroundColor(.white)
-                        .shadow(radius: 15)
-                        .padding()
-                        .frame(width:120)
-                        .overlay {
-                            Image(systemName: "bag.badge.plus")
-                                .font(.system(size: 40))
-                                .foregroundColor(.red)
-                        }
-                    
-                    Spacer()
                   
+                    ButtonFormat(buttonSize: 120, iconSize: 45, imageName: "bandage", action: Actions.board)
+                    
+                    Spacer()
+             
+                    ButtonFormat(buttonSize: 120, iconSize: 40, imageName: "bag.badge.plus", action: Actions.cart)
+
                 }
+                .padding([.leading,.trailing])
             }
         }
     }

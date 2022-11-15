@@ -8,7 +8,8 @@
 import Foundation
 
 class ViewManager: ObservableObject {
-    @Published var buy = false
+    @Published var board = false
+    @Published var clothes = false
     @Published var op = 0.0
     @Published var logoScale = 1.0
     @Published var logoOffset = CGFloat(0)

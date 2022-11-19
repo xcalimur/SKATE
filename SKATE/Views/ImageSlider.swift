@@ -9,6 +9,8 @@ import SwiftUI
 import UIKit
 
 struct ImageSlider: View {
+    
+    @EnvironmentObject var scene : ViewManager
     // 1
        private let images = ["skater", "skater2", "skater3"]
        
@@ -21,9 +23,12 @@ struct ImageSlider: View {
                        .resizable()
                        .aspectRatio(contentMode: .fill)
                        .ignoresSafeArea(edges: .all)
+                
                }
            }
            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+
+           //.modifier(pageTabView())
            .onAppear {
                setupAppearance()
            }
@@ -41,7 +46,23 @@ struct ImageSlider_Previews: PreviewProvider {
     static var previews: some View {
             // 4
             ImageSlider()
-                .previewLayout(.fixed(width: 400, height: 300))
+            .environmentObject(ViewManager())
+                .previewLayout(.fixed(width: 500, height: 300))
            
         }
+}
+
+
+struct pageTabView: ViewModifier {
+    @EnvironmentObject var scene : ViewManager
+    
+    func body(content: Content) -> some View {
+        if scene.board {
+            content
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        } else {
+            content
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+        }
+    }
 }

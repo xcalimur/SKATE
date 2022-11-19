@@ -39,5 +39,7 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .environmentObject(ViewManager())
+            .background(.gray)
+            .previewLayout(.fixed(width: 500, height: 200))
     }
 }

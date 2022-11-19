@@ -34,7 +34,7 @@ struct BoardView: View {
                                     .opacity(0.7)
                                     .font(.headline)
                                     .opacity(scene.op)
-                            
+                                
                                 Text("$40")
                                     .foregroundColor(.black)
                                     .opacity(0.7)
@@ -46,22 +46,35 @@ struct BoardView: View {
                             .padding()
                         }
                         .onAppear {
-                            withAnimation(.spring(blendDuration: 1.0)) {
+                            withAnimation(.spring(blendDuration: 2.0)) {
                                 scene.op = 1.0
                             }
                         }
-                       
+                        .onTapGesture {
+                            scene.itemDetail.toggle()
+                        }
+                    
+                    
                 }
                 
             }
         }
-
+        
         .mask(
             LinearGradient(gradient: Gradient(stops: [ .init(color: .clear, location: 0), .init(color: .black, location: 0.03)]), startPoint: .top, endPoint: .bottom)
-       )
+        )
         .mask(
             LinearGradient(gradient: Gradient(stops: [ .init(color: .clear, location: 0), .init(color: .black, location: 0.03)]), startPoint: .bottom, endPoint: .top)
-       )
+        )
+        
+        ZStack {
+            if scene.itemDetail {
+                ItemDetailView()
+                    .transition(.move(edge: .bottom))
+                    .animation(.spring(), value: scene.itemDetail)
+            }
+        }
+        .zIndex(2.0)
     }
 }
 

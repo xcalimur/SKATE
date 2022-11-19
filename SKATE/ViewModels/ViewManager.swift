@@ -13,4 +13,5 @@ class ViewManager: ObservableObject {
     @Published var op = 0.0
     @Published var logoScale = 1.0
     @Published var logoOffset = CGFloat(0)
+    @Published var itemDetail = false
 }

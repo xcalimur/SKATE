@@ -18,6 +18,7 @@
 		32BEFF532922D7410063F011 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF522922D7410063F011 /* HomeView.swift */; };
 		32BEFF552922D8A00063F011 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF542922D8A00063F011 /* ViewManager.swift */; };
 		32BEFF592922E2550063F011 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF582922E2550063F011 /* BoardView.swift */; };
+		32ED9E0B2928B03C0060DEB3 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ED9E0A2928B03C0060DEB3 /* ItemDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		32BEFF522922D7410063F011 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		32BEFF542922D8A00063F011 /* ViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
 		32BEFF582922E2550063F011 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		32ED9E0A2928B03C0060DEB3 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				32BEFF582922E2550063F011 /* BoardView.swift */,
 				324295B329233F9F007A07D5 /* ButtonFormat.swift */,
 				324295B729234E96007A07D5 /* ImageSlider.swift */,
+				32ED9E0A2928B03C0060DEB3 /* ItemDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32ED9E0B2928B03C0060DEB3 /* ItemDetailView.swift in Sources */,
 				3209D9732921F55D002555EE /* ContentView.swift in Sources */,
 				324295B6292344CE007A07D5 /* Actions.swift in Sources */,
 				32BEFF532922D7410063F011 /* HomeView.swift in Sources */,

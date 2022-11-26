@@ -32,7 +32,6 @@ struct ContentView: View {
                                     scene.op = 0.0
                                     scene.board = false
                                     scene.logoScale = 1.0
-                                    scene.logoOffset = -20
                                 }
                         }
                         

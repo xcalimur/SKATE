@@ -15,6 +15,7 @@
 		324295B429233F9F007A07D5 /* ButtonFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324295B329233F9F007A07D5 /* ButtonFormat.swift */; };
 		324295B6292344CE007A07D5 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324295B5292344CE007A07D5 /* Actions.swift */; };
 		324295B829234E96007A07D5 /* ImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324295B729234E96007A07D5 /* ImageSlider.swift */; };
+		328852EE2931F22500964447 /* Skateboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328852ED2931F22500964447 /* Skateboard.swift */; };
 		32BEFF532922D7410063F011 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF522922D7410063F011 /* HomeView.swift */; };
 		32BEFF552922D8A00063F011 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF542922D8A00063F011 /* ViewManager.swift */; };
 		32BEFF592922E2550063F011 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF582922E2550063F011 /* BoardView.swift */; };
@@ -31,6 +32,7 @@
 		324295B329233F9F007A07D5 /* ButtonFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormat.swift; sourceTree = "<group>"; };
 		324295B5292344CE007A07D5 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		324295B729234E96007A07D5 /* ImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlider.swift; sourceTree = "<group>"; };
+		328852ED2931F22500964447 /* Skateboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skateboard.swift; sourceTree = "<group>"; };
 		32BEFF522922D7410063F011 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		32BEFF542922D8A00063F011 /* ViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
 		32BEFF582922E2550063F011 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				324295B5292344CE007A07D5 /* Actions.swift */,
+				328852ED2931F22500964447 /* Skateboard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				32BEFF532922D7410063F011 /* HomeView.swift in Sources */,
 				324295B429233F9F007A07D5 /* ButtonFormat.swift in Sources */,
 				32BEFF552922D8A00063F011 /* ViewManager.swift in Sources */,
+				328852EE2931F22500964447 /* Skateboard.swift in Sources */,
 				32BEFF592922E2550063F011 /* BoardView.swift in Sources */,
 				3209D97F2921FE20002555EE /* Test.swift in Sources */,
 				3209D9712921F55D002555EE /* SKATEApp.swift in Sources */,

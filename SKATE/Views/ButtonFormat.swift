@@ -35,7 +35,6 @@ struct ButtonFormat: View {
                         scene.clothes.toggle()
                     }
                     scene.logoScale = 0.7
-                    scene.logoOffset = -50
                 }
                 
             }

@@ -11,6 +11,7 @@ struct BoardView: View {
     
     @EnvironmentObject var scene : ViewManager
     @State private var skateboards: [Skateboard] = []
+    @State private var selectedBoard = Skateboard(id: 1, image: "board_1", name: "Almost", price: "$89.99")
     
     var body: some View {
         ZStack {
@@ -21,23 +22,22 @@ struct BoardView: View {
                     ForEach(skateboards, id: \.id) {board in
                         RoundedRectangle(cornerRadius: 15)
                             .fill(.thinMaterial)
-                            .padding([.trailing,.leading], 10)
-                            .padding([.top,.bottom])
                             .frame(height: 280)
                             .opacity(scene.op)
+                            .shadow(color: .black.opacity(0.5), radius: 3,y: 5)
                             .overlay {
                                 VStack {
                                     Spacer()
                                     Image(board.image)
                                         .resizable()
-                                        .aspectRatio(contentMode: .fit)
+                                        .aspectRatio(contentMode: .fill)
                                         .opacity(scene.op)
-                                       
-                                    Spacer()
+                                   
+                                    Divider()
                                     Text(board.name)
                                         .foregroundColor(.black)
                                         .opacity(0.7)
-                                        .font(.headline)
+                                        .font(.subheadline.bold())
                                         .opacity(scene.op)
                                     
                                     Text(board.price)
@@ -46,24 +46,31 @@ struct BoardView: View {
                                         .font(.footnote)
                                         .opacity(scene.op)
                                     
-                                    Spacer()
-                                    
                                 }
                                 .padding()
                             }
                             .onAppear {
+                                
                                 withAnimation(.spring(blendDuration: 2.0)) {
+                                    //selectedBoard = board
                                     scene.op = 1.0
                                 }
                             }
                             .onTapGesture {
-                                scene.itemDetail.toggle()
+                                
+                                    selectedBoard = board
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                        scene.itemDetail.toggle()
+                                    }
+
                             }
                         
                         
                     }
                     
                 }
+                .padding([.top,.bottom])
+                .padding([.trailing,.leading], 10)
             }
             
             .mask(
@@ -73,7 +80,8 @@ struct BoardView: View {
                 LinearGradient(gradient: Gradient(stops: [ .init(color: .clear, location: 0), .init(color: .black, location: 0.03)]), startPoint: .bottom, endPoint: .top)
             )
             
-            ItemDetailView()
+            
+            ItemDetailView(item: selectedBoard)
                 .cornerRadius(20)
                 .ignoresSafeArea()
                 .offset(y : scene.itemDetail ? 0 : UIScreen.main.bounds.height)
@@ -105,7 +113,7 @@ struct BoardView_Previews: PreviewProvider {
     static var previews: some View {
         BoardView()
             .environmentObject(ViewManager())
-            .background(.red)
+            .background(.gray)
     }
 }
 

@@ -20,6 +20,7 @@
 		32991065293320EF0048C956 /* SkateboardsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 32392F4429331AA90027698F /* SkateboardsData.json */; };
 		32AE3F2F2933260400530F43 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209D97E2921FE20002555EE /* Test.swift */; };
 		32AE3F3229333F5D00530F43 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AE3F3129333F5D00530F43 /* CartView.swift */; };
+		32B35F102933E479007CD75A /* playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B35F0F2933E479007CD75A /* playground.swift */; };
 		32BEFF532922D7410063F011 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF522922D7410063F011 /* HomeView.swift */; };
 		32BEFF552922D8A00063F011 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF542922D8A00063F011 /* ViewManager.swift */; };
 		32BEFF592922E2550063F011 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF582922E2550063F011 /* BoardView.swift */; };
@@ -41,6 +42,7 @@
 		328852ED2931F22500964447 /* Skateboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skateboard.swift; sourceTree = "<group>"; };
 		3299106329331D820048C956 /* SkateboardDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkateboardDataResponse.swift; sourceTree = "<group>"; };
 		32AE3F3129333F5D00530F43 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		32B35F0F2933E479007CD75A /* playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playground.swift; sourceTree = "<group>"; };
 		32BEFF522922D7410063F011 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		32BEFF542922D8A00063F011 /* ViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
 		32BEFF582922E2550063F011 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				3209D9742921F55E002555EE /* Assets.xcassets */,
 				3209D9762921F55E002555EE /* Preview Content */,
 				3209D97E2921FE20002555EE /* Test.swift */,
+				32B35F0F2933E479007CD75A /* playground.swift */,
 			);
 			path = SKATE;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				32BEFF532922D7410063F011 /* HomeView.swift in Sources */,
 				324295B429233F9F007A07D5 /* ButtonFormat.swift in Sources */,
 				32BEFF552922D8A00063F011 /* ViewManager.swift in Sources */,
+				32B35F102933E479007CD75A /* playground.swift in Sources */,
 				32AE3F2F2933260400530F43 /* Test.swift in Sources */,
 				328852EE2931F22500964447 /* Skateboard.swift in Sources */,
 				32AE3F3229333F5D00530F43 /* CartView.swift in Sources */,

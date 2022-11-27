@@ -13,6 +13,7 @@ struct ContentView: View {
     @Namespace var namespace
     
     @State var swipe = false
+    @State var scaleCart = 1.0
     
     
     var body: some View {
@@ -41,15 +42,22 @@ struct ContentView: View {
                         }
                         
                         if scene.board {
-                            Image(systemName: "cart.circle.fill")
+                            
+                            Image(systemName: "bag.circle")
                                 .font(.system(size: 50))
                                 .padding(.trailing,30)
-                                .foregroundColor(.white)
-                                .opacity(0.9)
-                                //.shadow(color: .white, radius: 15)
+                                .foregroundColor(.red)
+                                .opacity(scene.op)
+                                //.shadow(color: .red, radius: 5)
+                                .scaleEffect(scaleCart)
+                                .animation(.spring(dampingFraction: 0.8,blendDuration: 0.5), value: scaleCart)
                                 .onTapGesture {
+                                    scaleCart = 0.7
                                     scene.showCart.toggle()
                                     scene.itemDetail = false
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                        scaleCart = 1.0
+                                    }
                                 }
                                 
                         }

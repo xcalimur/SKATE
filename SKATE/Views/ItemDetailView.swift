@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ItemDetailView: View {
     @EnvironmentObject var scene : ViewManager
+    
+    var item : Skateboard
+    
     var body: some View {
         ZStack {
             Color.white
@@ -25,20 +28,20 @@ struct ItemDetailView: View {
                     }
                 
                 Spacer()
-                Image("board_1")
+                Image(item.image)
                     .resizable()
                     .scaledToFit()
                 
                Spacer()
                 VStack(alignment: .leading) {
                     
-                    Text("Board Title Name")
+                    Text(item.name)
                         .font(.headline)
                     Text("item #")
                         .font(.subheadline)
                     Divider()
                     HStack {
-                        Text("$89.99")
+                        Text(item.price)
                         Spacer()
                         Text("size : 8.25")
                     }
@@ -69,7 +72,7 @@ struct ItemDetailView: View {
 
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemDetailView()
+        ItemDetailView( item: Skateboard(id: 1, image: "board_1", name: "Almost", price: "$89.99"))
             .environmentObject(ViewManager())
     }
 }

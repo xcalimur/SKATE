@@ -18,6 +18,7 @@ struct ItemDetailView: View {
             
                Image(systemName: "line.3.horizontal.decrease")
                     .font(.system(size: 20))
+                    .opacity(0.7)
                     .padding()
                     .onTapGesture {
                         scene.itemDetail.toggle()
@@ -47,11 +48,12 @@ struct ItemDetailView: View {
                         .frame(maxWidth: .infinity, maxHeight: 70)
                         .shadow(radius: 10)
                         .overlay {
-                            Text("Add To Bag")
+                            Text("Add To Cart")
                                 .font(Font.headline.bold())
                                 .foregroundColor(Color.white)
                                 .shadow(color: .white, radius: 2)
                         }
+                        .padding(.top, 10)
                   
 
                 }

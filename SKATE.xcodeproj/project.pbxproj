@@ -11,11 +11,15 @@
 		3209D9732921F55D002555EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209D9722921F55D002555EE /* ContentView.swift */; };
 		3209D9752921F55E002555EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3209D9742921F55E002555EE /* Assets.xcassets */; };
 		3209D9782921F55E002555EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3209D9772921F55E002555EE /* Preview Assets.xcassets */; };
-		3209D97F2921FE20002555EE /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209D97E2921FE20002555EE /* Test.swift */; };
+		32392F42293319DE0027698F /* StaticJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32392F41293319DE0027698F /* StaticJSONMapper.swift */; };
 		324295B429233F9F007A07D5 /* ButtonFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324295B329233F9F007A07D5 /* ButtonFormat.swift */; };
 		324295B6292344CE007A07D5 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324295B5292344CE007A07D5 /* Actions.swift */; };
 		324295B829234E96007A07D5 /* ImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324295B729234E96007A07D5 /* ImageSlider.swift */; };
 		328852EE2931F22500964447 /* Skateboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328852ED2931F22500964447 /* Skateboard.swift */; };
+		3299106429331D820048C956 /* SkateboardDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299106329331D820048C956 /* SkateboardDataResponse.swift */; };
+		32991065293320EF0048C956 /* SkateboardsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 32392F4429331AA90027698F /* SkateboardsData.json */; };
+		32AE3F2F2933260400530F43 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209D97E2921FE20002555EE /* Test.swift */; };
+		32AE3F3229333F5D00530F43 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AE3F3129333F5D00530F43 /* CartView.swift */; };
 		32BEFF532922D7410063F011 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF522922D7410063F011 /* HomeView.swift */; };
 		32BEFF552922D8A00063F011 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF542922D8A00063F011 /* ViewManager.swift */; };
 		32BEFF592922E2550063F011 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEFF582922E2550063F011 /* BoardView.swift */; };
@@ -29,10 +33,14 @@
 		3209D9742921F55E002555EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3209D9772921F55E002555EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3209D97E2921FE20002555EE /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		32392F41293319DE0027698F /* StaticJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticJSONMapper.swift; sourceTree = "<group>"; };
+		32392F4429331AA90027698F /* SkateboardsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SkateboardsData.json; sourceTree = "<group>"; };
 		324295B329233F9F007A07D5 /* ButtonFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormat.swift; sourceTree = "<group>"; };
 		324295B5292344CE007A07D5 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		324295B729234E96007A07D5 /* ImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlider.swift; sourceTree = "<group>"; };
 		328852ED2931F22500964447 /* Skateboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skateboard.swift; sourceTree = "<group>"; };
+		3299106329331D820048C956 /* SkateboardDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkateboardDataResponse.swift; sourceTree = "<group>"; };
+		32AE3F3129333F5D00530F43 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		32BEFF522922D7410063F011 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		32BEFF542922D8A00063F011 /* ViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
 		32BEFF582922E2550063F011 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
@@ -69,6 +77,8 @@
 		3209D96F2921F55D002555EE /* SKATE */ = {
 			isa = PBXGroup;
 			children = (
+				32392F4329331A710027698F /* JSON */,
+				32392F40293319C90027698F /* Mapper */,
 				324295B02923363C007A07D5 /* Models */,
 				324295AF29233594007A07D5 /* ViewModels */,
 				32BEFF512922D6EB0063F011 /* Views */,
@@ -88,6 +98,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		32392F40293319C90027698F /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				32392F41293319DE0027698F /* StaticJSONMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		32392F4329331A710027698F /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				32392F4429331AA90027698F /* SkateboardsData.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		324295AF29233594007A07D5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,19 +127,29 @@
 			children = (
 				324295B5292344CE007A07D5 /* Actions.swift */,
 				328852ED2931F22500964447 /* Skateboard.swift */,
+				3299106329331D820048C956 /* SkateboardDataResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		32AE3F3029333F1C00530F43 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				324295B729234E96007A07D5 /* ImageSlider.swift */,
+				324295B329233F9F007A07D5 /* ButtonFormat.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		32BEFF512922D6EB0063F011 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				32AE3F3029333F1C00530F43 /* Support */,
 				3209D9722921F55D002555EE /* ContentView.swift */,
 				32BEFF522922D7410063F011 /* HomeView.swift */,
 				32BEFF582922E2550063F011 /* BoardView.swift */,
-				324295B329233F9F007A07D5 /* ButtonFormat.swift */,
-				324295B729234E96007A07D5 /* ImageSlider.swift */,
 				32ED9E0A2928B03C0060DEB3 /* ItemDetailView.swift */,
+				32AE3F3129333F5D00530F43 /* CartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32991065293320EF0048C956 /* SkateboardsData.json in Resources */,
 				3209D9782921F55E002555EE /* Preview Assets.xcassets in Resources */,
 				3209D9752921F55E002555EE /* Assets.xcassets in Resources */,
 			);
@@ -194,9 +231,12 @@
 				32BEFF532922D7410063F011 /* HomeView.swift in Sources */,
 				324295B429233F9F007A07D5 /* ButtonFormat.swift in Sources */,
 				32BEFF552922D8A00063F011 /* ViewManager.swift in Sources */,
+				32AE3F2F2933260400530F43 /* Test.swift in Sources */,
 				328852EE2931F22500964447 /* Skateboard.swift in Sources */,
+				32AE3F3229333F5D00530F43 /* CartView.swift in Sources */,
 				32BEFF592922E2550063F011 /* BoardView.swift in Sources */,
-				3209D97F2921FE20002555EE /* Test.swift in Sources */,
+				3299106429331D820048C956 /* SkateboardDataResponse.swift in Sources */,
+				32392F42293319DE0027698F /* StaticJSONMapper.swift in Sources */,
 				3209D9712921F55D002555EE /* SKATEApp.swift in Sources */,
 				324295B829234E96007A07D5 /* ImageSlider.swift in Sources */,
 			);

@@ -1,0 +1,41 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "image": "board_1",
+            "name": "Almost Skate",
+            "price": "$90",
+        },
+        {
+            "id": 2,
+            "image": "board_1",
+            "name": "Almost Skate",
+            "price": "$90",
+        },
+        {
+            "id": 3,
+            "image": "board_1",
+            "name": "Almost Skate",
+            "price": "$90",
+        },
+        {
+            "id": 4,
+            "image": "board_1",
+            "name": "Almost Skate",
+            "price": "$90",
+        },
+        {
+            "id": 5,
+            "image": "board_1",
+            "name": "Almost Skate",
+            "price": "$90",
+        },
+        {
+            "id": 6,
+            "image": "board_1",
+            "name": "Almost Skate",
+            "price": "$90",
+        }
+    ]
+   
+}

@@ -12,6 +12,7 @@ struct SKATEApp: App {
     
     var body: some Scene {
         WindowGroup {
+            //Test()
             ContentView()
                 .environmentObject(ViewManager())
         }

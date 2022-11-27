@@ -14,14 +14,17 @@ struct ContentView: View {
     
     @State var swipe = false
     
+    
     var body: some View {
         VStack {
             ZStack {
                 
                 ImageSlider()
                     .ignoresSafeArea()
+          
   
                 VStack {
+                    HStack(spacing: 100) {
                         Image("skatelogo")
                             .resizable()
                             .scaledToFit()
@@ -30,11 +33,30 @@ struct ContentView: View {
                             .onTapGesture {
                                 withAnimation(.spring(blendDuration: 1.0)){
                                     scene.op = 0.0
-                                    scene.board = false
                                     scene.logoScale = 1.0
-                                }
+                                    scene.board = false
+                                    scene.showCart = false
+                                    scene.itemDetail = false
+                                    }
                         }
                         
+                        if scene.board {
+                            Image(systemName: "cart.circle.fill")
+                                .font(.system(size: 50))
+                                .padding(.trailing,30)
+                                .foregroundColor(.white)
+                                .opacity(0.9)
+                                //.shadow(color: .white, radius: 15)
+                                .onTapGesture {
+                                    scene.showCart.toggle()
+                                    scene.itemDetail = false
+                                }
+                                
+                        }
+                       
+                    }
+                 
+                       
                   
 
                     if !scene.board{

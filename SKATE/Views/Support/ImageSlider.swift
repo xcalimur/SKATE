@@ -26,7 +26,7 @@ struct ImageSlider: View {
                 
                }
            }
-           .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+           .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
 
            //.modifier(pageTabView())
            .onAppear {

@@ -11,8 +11,6 @@ struct ContentView: View {
     
     @EnvironmentObject var scene : ViewManager
     @Namespace var namespace
-    
-    @State var swipe = false
     @State var scaleCart = 1.0
     
     
@@ -83,6 +81,14 @@ struct ContentView: View {
     
         }
         .environmentObject(scene)
+        .onAppear {
+            do {
+                let res =  try StaticJSONMapper.decode(file: "SkateboardsData", type: SkateboardDataResponse.self)
+                scene.skateboards = res.data
+            } catch {
+                print(error)
+            }
+        }
  
     }
 }

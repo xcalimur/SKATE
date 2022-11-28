@@ -15,6 +15,8 @@
 		324295B429233F9F007A07D5 /* ButtonFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324295B329233F9F007A07D5 /* ButtonFormat.swift */; };
 		324295B6292344CE007A07D5 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324295B5292344CE007A07D5 /* Actions.swift */; };
 		324295B829234E96007A07D5 /* ImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324295B729234E96007A07D5 /* ImageSlider.swift */; };
+		32729AB429356932009DB804 /* BoardGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32729AB329356932009DB804 /* BoardGridView.swift */; };
+		32729AB6293570AD009DB804 /* BoardSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32729AB5293570AD009DB804 /* BoardSwipeView.swift */; };
 		328852EE2931F22500964447 /* Skateboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328852ED2931F22500964447 /* Skateboard.swift */; };
 		3299106429331D820048C956 /* SkateboardDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299106329331D820048C956 /* SkateboardDataResponse.swift */; };
 		32991065293320EF0048C956 /* SkateboardsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 32392F4429331AA90027698F /* SkateboardsData.json */; };
@@ -39,6 +41,8 @@
 		324295B329233F9F007A07D5 /* ButtonFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormat.swift; sourceTree = "<group>"; };
 		324295B5292344CE007A07D5 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		324295B729234E96007A07D5 /* ImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlider.swift; sourceTree = "<group>"; };
+		32729AB329356932009DB804 /* BoardGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGridView.swift; sourceTree = "<group>"; };
+		32729AB5293570AD009DB804 /* BoardSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSwipeView.swift; sourceTree = "<group>"; };
 		328852ED2931F22500964447 /* Skateboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skateboard.swift; sourceTree = "<group>"; };
 		3299106329331D820048C956 /* SkateboardDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkateboardDataResponse.swift; sourceTree = "<group>"; };
 		32AE3F3129333F5D00530F43 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				32BEFF582922E2550063F011 /* BoardView.swift */,
 				32ED9E0A2928B03C0060DEB3 /* ItemDetailView.swift */,
 				32AE3F3129333F5D00530F43 /* CartView.swift */,
+				32729AB329356932009DB804 /* BoardGridView.swift */,
+				32729AB5293570AD009DB804 /* BoardSwipeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +241,8 @@
 				324295B429233F9F007A07D5 /* ButtonFormat.swift in Sources */,
 				32BEFF552922D8A00063F011 /* ViewManager.swift in Sources */,
 				32B35F102933E479007CD75A /* playground.swift in Sources */,
+				32729AB6293570AD009DB804 /* BoardSwipeView.swift in Sources */,
+				32729AB429356932009DB804 /* BoardGridView.swift in Sources */,
 				32AE3F2F2933260400530F43 /* Test.swift in Sources */,
 				328852EE2931F22500964447 /* Skateboard.swift in Sources */,
 				32AE3F3229333F5D00530F43 /* CartView.swift in Sources */,

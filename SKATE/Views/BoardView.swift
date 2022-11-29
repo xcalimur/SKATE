@@ -21,7 +21,7 @@ struct BoardView: View {
                     BoardGridView()
                     .background(BackgroundHelper())
                     .tabItem {
-                        Label("grid", systemImage: "circle")
+                        Label("grid", systemImage: "rectangle.split.2x2.fill")
                            
                     }
                 
@@ -29,22 +29,25 @@ struct BoardView: View {
                     BoardSwipeView()
                     .background(BackgroundHelper())
                     .tabItem {
-                        Label("swipe", systemImage: "square")
+                        Label("swipe", systemImage: "rectangle.fill.on.rectangle.fill")
                            
                     }
                     
                 
             }
+            .shadow(radius: 10)
             .onAppear {
                 UITabBar.appearance().backgroundColor = UIColor(Color.white)
             }
+            .accentColor(.red)
             
             
             ItemDetailView(item: scene.selectedBoard)
                 .cornerRadius(20)
                 .ignoresSafeArea()
                 .offset(y : scene.itemDetail ? 0 : UIScreen.main.bounds.height)
-                .animation(.spring( dampingFraction: 0.9, blendDuration: 1.0), value: scene.itemDetail)
+                .animation(.easeInOut(duration: 0.3), value: scene.itemDetail)
+                //.animation(.spring( dampingFraction: 0.9, blendDuration: 1.0), value: scene.itemDetail)
                 //.modifier(SwipeToDismissModifier(onDismiss: {}))
             
             CartView()

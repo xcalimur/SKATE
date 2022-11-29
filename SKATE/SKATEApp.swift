@@ -15,6 +15,7 @@ struct SKATEApp: App {
             //Test()
             ContentView()
                 .environmentObject(ViewManager())
+            
         }
     }
 }

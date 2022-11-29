@@ -24,7 +24,7 @@ struct ItemDetailView: View {
                     .opacity(0.7)
                     .padding()
                     .onTapGesture {
-                        scene.itemDetail.toggle()
+                        scene.itemDetail = false
                     }
                 
                 Spacer()

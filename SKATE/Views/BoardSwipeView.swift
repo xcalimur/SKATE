@@ -9,31 +9,50 @@ import SwiftUI
 
 struct BoardSwipeView: View {
     
-    @State private var selectedBoard = Skateboard(id: 1, image: "board_1", name: "Almost", price: "$89.99") // fix this, selectedBoard is always default
+    @EnvironmentObject var scene : ViewManager
     
+    @State var selection = 0
+
     var body: some View {
-        TabView(selection: $selectedBoard) {
-            ForEach(0...5, id: \.self){ _ in
-                RoundedRectangle(cornerRadius: .infinity)
-                    .fill(.black)
-                    .frame(width: UIScreen.main.bounds.width*0.9)
-                    .overlay {
-                        VStack {
-                            Spacer()
-                            RoundedRectangle(cornerRadius: 15)
-                                .fill(.gray)
-                                .frame(width: UIScreen.main.bounds.width*0.9, height: 200)
+        ZStack {
+            TabView(selection: $selection) {
+                ForEach(0...20, id: \.self){ _ in
+                    Image("board_1_hero")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .padding(.bottom,100)
+                        .overlay {
+                            VStack(alignment: .leading) {
+                                Spacer()
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(.ultraThinMaterial)
+                                    .frame(width: UIScreen.main.bounds.width*0.6, height: 150)
+                                    .overlay(alignment: .topLeading) {
+                                        
+                                        VStack(alignment: .leading) {
+                                            Text("Brand Name Title")
+                                            Divider()
+                                            Text("$$$")
+                                                .font(.caption)
+                                        }
+                                        .padding()
+                                        
+                                    }
+                            }
                         }
-                    }
+                        
+                }
+                .padding(.bottom,10)
             }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
         }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
     }
 }
 
 struct BoardSwipeView_Previews: PreviewProvider {
     static var previews: some View {
         BoardSwipeView()
+            .environmentObject(ViewManager())
         
     }
 }

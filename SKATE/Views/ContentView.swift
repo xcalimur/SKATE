@@ -20,6 +20,8 @@ struct ContentView: View {
                 
                 ImageSlider()
                     .ignoresSafeArea()
+                
+            
           
   
                 VStack {
@@ -46,7 +48,7 @@ struct ContentView: View {
                                 .padding(.trailing,30)
                                 .foregroundColor(.red)
                                 .opacity(scene.op)
-                                //.shadow(color: .red, radius: 5)
+
                                 .scaleEffect(scaleCart)
                                 .animation(.spring(dampingFraction: 0.8,blendDuration: 0.5), value: scaleCart)
                                 .onTapGesture {

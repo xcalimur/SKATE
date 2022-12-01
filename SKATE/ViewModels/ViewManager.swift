@@ -18,6 +18,6 @@ class ViewManager: ObservableObject {
     @Published var itemViewOffset = 0.0
     @Published var cart: [Skateboard] = []
     @Published var skateboards: [Skateboard] = []
-    @Published var selectedBoard = Skateboard(id: 1, image: "board_1", name: "placeholder", price: "$89.99")
+    @Published var selectedBoard = Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero3", name: "placeholder", price: "$89.99")
 
 }

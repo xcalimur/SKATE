@@ -12,7 +12,7 @@ struct ImageSlider: View {
     
     @EnvironmentObject var scene : ViewManager
     // 1
-       private let images = ["skater", "skater2", "skater3"]
+       private let images = ["skater3"]
        
        var body: some View {
            // 2
@@ -52,17 +52,3 @@ struct ImageSlider_Previews: PreviewProvider {
         }
 }
 
-
-struct pageTabView: ViewModifier {
-    @EnvironmentObject var scene : ViewManager
-    
-    func body(content: Content) -> some View {
-        if scene.board {
-            content
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-        } else {
-            content
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-        }
-    }
-}

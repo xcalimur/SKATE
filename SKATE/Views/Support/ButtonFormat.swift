@@ -20,7 +20,6 @@ struct ButtonFormat: View {
         Circle()
             .foregroundColor(.white)
             .shadow(radius: 10)
-            //.padding()
             .frame(width: buttonSize)
             .overlay {
                 Image(systemName: imageName)

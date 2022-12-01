@@ -5,6 +5,7 @@
 //  Created by Cami Mata on 11/28/22.
 //
 
+import Foundation
 import SwiftUI
 
 struct BoardSwipeView: View {
@@ -49,7 +50,7 @@ struct BoardSwipeView: View {
                                                         .foregroundColor(.white)
                                                 }
                                         }
-                                    
+                                        
                                     }
                                     .padding()
                                     
@@ -61,7 +62,7 @@ struct BoardSwipeView: View {
             .padding(.bottom,10)
         }
         .padding(.bottom,20)
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
        
         
     }
@@ -75,3 +76,4 @@ struct BoardSwipeView_Previews: PreviewProvider {
         
     }
 }
+

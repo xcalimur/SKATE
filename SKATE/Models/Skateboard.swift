@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Skateboard: Codable, Hashable {
+struct Skateboard: Codable, Hashable, Identifiable {
     let id : Int
-    let image, name, price: String
+    let image, heroImage, name, price: String
 }

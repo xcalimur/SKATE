@@ -11,12 +11,12 @@ struct BoardView: View {
     
     @EnvironmentObject var scene : ViewManager
 
-    @State var selection = 0
+    @State var selection1 = 0
     
     var body: some View {
         ZStack (alignment: .bottom){
             
-            TabView(selection: $selection) {
+            TabView(selection: $selection1) {
                 
                     BoardGridView()
                     .background(BackgroundHelper())
@@ -26,11 +26,10 @@ struct BoardView: View {
                     }
                 
      
-                    BoardSwipeView()
+                    BoardHeroScroll()
                     .background(BackgroundHelper())
                     .tabItem {
                         Label("swipe", systemImage: "rectangle.fill.on.rectangle.fill")
-                           
                     }
                     
                 
@@ -47,8 +46,6 @@ struct BoardView: View {
                 .ignoresSafeArea()
                 .offset(y : scene.itemDetail ? 0 : UIScreen.main.bounds.height)
                 .animation(.easeInOut(duration: 0.3), value: scene.itemDetail)
-                //.animation(.spring( dampingFraction: 0.9, blendDuration: 1.0), value: scene.itemDetail)
-                //.modifier(SwipeToDismissModifier(onDismiss: {}))
             
             CartView()
                 .cornerRadius(20)
@@ -90,28 +87,3 @@ struct BackgroundHelper: UIViewRepresentable {
     func updateUIView(_ uiView: UIView, context: Context) {}
 }
 
-struct SwipeToDismissModifier: ViewModifier {
-    var onDismiss: () -> Void
-    @State private var offset: CGSize = .zero
-    
-    func body(content: Content) -> some View {
-        content
-            .offset(y: offset.height)
-            .animation(.interactiveSpring(), value: offset)
-            .simultaneousGesture(
-                DragGesture()
-                    .onChanged { gesture in
-                        if gesture.translation.width < 50 {
-                            offset = gesture.translation
-                        }
-                    }
-                    .onEnded { _ in
-                        if abs(offset.height) > 100 {
-                            onDismiss()
-                        } else {
-                            offset = .zero
-                        }
-                    }
-            )
-    }
-}

@@ -19,7 +19,7 @@ struct BoardGridView: View {
             LazyVGrid(columns: [GridItem(.flexible(),spacing: 10), GridItem(.flexible(),spacing: 10)],spacing: 10) {
                 ForEach(scene.skateboards, id: \.id) {board in
                     RoundedRectangle(cornerRadius: 15)
-                        .fill(.thinMaterial)
+                        .fill(.ultraThinMaterial)
                         .frame(height: 280)
                         .opacity(scene.op)
                         .shadow(color: .black.opacity(0.5), radius: 3,y: 5)

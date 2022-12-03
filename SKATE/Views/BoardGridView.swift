@@ -48,12 +48,7 @@ struct BoardGridView: View {
                             .padding()
                         }
                         .onTapGesture {
-                            
-                            scene.selectedBoard = board
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                scene.itemDetail = true
-                            }
-                            
+                            scene.showDetailView(board: board)
                         }
                     
                 }
@@ -84,7 +79,7 @@ struct BoardGridView: View {
 struct BoardGridView_Previews: PreviewProvider {
     static var previews: some View {
         BoardGridView()
-            .environmentObject(ViewManager())
+            .environmentObject(ViewManager(cart: [], skateboards: []))
             .background(.gray)
     }
 }

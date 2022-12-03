@@ -13,7 +13,6 @@ struct BoardHeroScroll: View {
     
     @State var avaliableSpace = UIScreen.main.bounds.width
     
-    @State var scaleCart = 1.0
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -27,12 +26,7 @@ struct BoardHeroScroll: View {
                         .padding(.trailing,60)
                         .shadow(radius: 5)
                         .onTapGesture {
-                            
-                            scene.selectedBoard = board
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                scene.itemDetail = true
-                            }
-                            
+                            scene.showDetailView(board: board)
                         }
                   
                 }
@@ -47,6 +41,6 @@ struct BoardHeroScroll: View {
 struct BoardHeroScroll_Previews: PreviewProvider {
     static var previews: some View {
         BoardHeroScroll()
-            .environmentObject(ViewManager())
+            .environmentObject(ViewManager(cart: [], skateboards: []))
     }
 }

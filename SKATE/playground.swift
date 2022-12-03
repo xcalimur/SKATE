@@ -11,7 +11,6 @@ import SwiftUI
 
 struct playground: View {
     
-    @EnvironmentObject var scene : ViewManager
    
 
     var body: some View {
@@ -26,7 +25,7 @@ struct playground: View {
 struct playground_Previews: PreviewProvider {
     static var previews: some View {
         playground()
-            .environmentObject(ViewManager())
+         
     }
 }
 

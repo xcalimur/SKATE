@@ -13,7 +13,7 @@ struct BoardSwipeView: View {
     @EnvironmentObject var scene : ViewManager
     
     @State var selection = 0
-    @State var avaliableSpace = UIScreen.main.bounds.width*0.5
+    @State var avaliableSpace1 = UIScreen.main.bounds.width*0.5
 
     var body: some View {
         
@@ -30,7 +30,7 @@ struct BoardSwipeView: View {
                             Spacer()
                             RoundedRectangle(cornerRadius: 15)
                                 .fill(.white)
-                                .frame(width: avaliableSpace, height: 120)
+                                .frame(width: avaliableSpace1, height: 120)
                                 .shadow(radius: 10)
                                 .overlay(alignment: .topLeading) {
                                     
@@ -44,7 +44,7 @@ struct BoardSwipeView: View {
                                             Spacer()
                                             RoundedRectangle(cornerRadius: 15)
                                                 .fill(.red)
-                                                .frame(width: avaliableSpace * 0.3, height: 30)
+                                                .frame(width: avaliableSpace1 * 0.3, height: 30)
                                                 .overlay {
                                                     Image(systemName: "plus")
                                                         .foregroundColor(.white)
@@ -71,7 +71,7 @@ struct BoardSwipeView: View {
 struct BoardSwipeView_Previews: PreviewProvider {
     static var previews: some View {
         BoardSwipeView()
-            .environmentObject(ViewManager())
+            .environmentObject(ViewManager(cart: [], skateboards: []))
             .background(.gray)
         
     }

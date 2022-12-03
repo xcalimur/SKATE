@@ -11,9 +11,7 @@ struct ContentView: View {
     
     @EnvironmentObject var scene : ViewManager
     @Namespace var namespace
-    @State var scaleCart = 1.0
-    
-    
+   
     var body: some View {
         VStack {
             ZStack {
@@ -21,9 +19,7 @@ struct ContentView: View {
                 ImageSlider()
                     .ignoresSafeArea()
                 
-            
-          
-  
+                
                 VStack {
                     HStack(spacing: 100) {
                         Image("skatelogo")
@@ -33,13 +29,9 @@ struct ContentView: View {
                             .scaleEffect(scene.logoScale)
                             .onTapGesture {
                                 withAnimation(.spring(blendDuration: 1.0)){
-                                    scene.op = 0.0
-                                    scene.logoScale = 1.0
-                                    scene.board = false
-                                    scene.showCart = false
-                                    scene.itemDetail = false
-                                    }
-                        }
+                                    scene.returnToHomeScreen()
+                                }
+                            }
                         
                         if scene.board {
                             
@@ -48,50 +40,35 @@ struct ContentView: View {
                                 .padding(.trailing,30)
                                 .foregroundColor(.red)
                                 .opacity(scene.op)
-
-                                .scaleEffect(scaleCart)
-                                .animation(.spring(dampingFraction: 0.8,blendDuration: 0.5), value: scaleCart)
+                                .scaleEffect(scene.scaleCart)
+                                .animation(.spring(dampingFraction: 0.8,blendDuration: 0.5), value: scene.scaleCart)
                                 .onTapGesture {
-                                    scaleCart = 0.7
-                                    scene.showCart.toggle()
-                                    scene.itemDetail = false
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                        scaleCart = 1.0
-                                    }
+                                    scene.popUpCart()
                                 }
-                                
                         }
-                       
+                        
                     }
-                 
-                       
-                  
-
+                    
                     if !scene.board{
                         Spacer()
                         HomeView()
-                            .frame(maxWidth: .infinity, maxHeight: 100)
-                            
-                            
+                            .frame(maxWidth: .infinity, maxHeight: 130)
+                            .padding([.trailing,.leading], 15)
+                        
+                        
                     } else {
                         BoardView()
-                            //.padding([.trailing, .leading])
                     }
-
+                    
                 }
             }
-    
+            
         }
         .environmentObject(scene)
         .onAppear {
-            do {
-                let res =  try StaticJSONMapper.decode(file: "SkateboardsData", type: SkateboardDataResponse.self)
-                scene.skateboards = res.data
-            } catch {
-                print(error)
-            }
+            scene.getSkateboardData()
         }
- 
+        
     }
 }
 
@@ -101,22 +78,7 @@ struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {
         ContentView()
-            .environmentObject(ViewManager())
+            .environmentObject(ViewManager(cart: [], skateboards: []))
             
-    }
-}
-
-extension View {
-    /// Applies the given transform if the given condition evaluates to `true`.
-    /// - Parameters:
-    ///   - condition: The condition to evaluate.
-    ///   - transform: The transform to apply to the source `View`.
-    /// - Returns: Either the original `View` or the modified `View` if the condition is `true`.
-    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
-        if condition {
-            transform(self)
-        } else {
-            self
-        }
     }
 }

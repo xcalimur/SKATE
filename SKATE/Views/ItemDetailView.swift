@@ -73,6 +73,6 @@ struct ItemDetailView: View {
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ItemDetailView( item: Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero3", name: "Almost", price: "$89.99"))
-            .environmentObject(ViewManager())
+            .environmentObject(ViewManager(cart: [], skateboards: []))
     }
 }

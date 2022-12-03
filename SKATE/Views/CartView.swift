@@ -63,6 +63,6 @@ struct CartView: View {
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
         CartView()
-            .environmentObject(ViewManager())
+            .environmentObject(ViewManager(cart: [], skateboards: [Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90")]))
     }
 }

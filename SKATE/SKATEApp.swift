@@ -14,7 +14,7 @@ struct SKATEApp: App {
         WindowGroup {
             //Test()
             ContentView()
-                .environmentObject(ViewManager())
+                .environmentObject(ViewManager(cart: [], skateboards: []))
             
         }
     }

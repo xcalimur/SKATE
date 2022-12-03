@@ -46,7 +46,7 @@ struct ImageSlider_Previews: PreviewProvider {
     static var previews: some View {
             // 4
             ImageSlider()
-            .environmentObject(ViewManager())
+            .environmentObject(ViewManager(cart: [], skateboards: []))
                 .previewLayout(.fixed(width: 500, height: 300))
            
         }

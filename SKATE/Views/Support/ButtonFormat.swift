@@ -46,6 +46,6 @@ struct ButtonFormat_Previews: PreviewProvider {
     
     static var previews: some View {
         ButtonFormat(buttonSize: 120, iconSize: 40, imageName: "banknote", action: Actions.board)
-            .environmentObject(ViewManager())
+            .environmentObject(ViewManager(cart: [], skateboards: []))
     }
 }

@@ -10,4 +10,5 @@ import Foundation
 struct Skateboard: Codable, Hashable, Identifiable {
     let id : Int
     let image, heroImage, name, price: String
+    
 }

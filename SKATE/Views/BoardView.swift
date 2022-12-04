@@ -44,13 +44,13 @@ struct BoardView: View {
             ItemDetailView(item: scene.selectedBoard)
                 .cornerRadius(20)
                 .ignoresSafeArea()
-                .offset(y : scene.itemDetail ? 0 : UIScreen.main.bounds.height)
+                .offset(y : scene.itemDetail ? 0 : scene.heightAvailableSpace)
                 .animation(.easeInOut(duration: 0.3), value: scene.itemDetail)
             
             CartView()
                 .cornerRadius(20)
                 .ignoresSafeArea()
-                .offset(y : scene.showCart ? 0 : UIScreen.main.bounds.height)
+                .offset(y : scene.showCart ? 0 : scene.heightAvailableSpace)
                 .animation(.spring( dampingFraction: 0.9, blendDuration: 1.0), value: scene.showCart)
             
             

@@ -11,9 +11,6 @@ struct BoardHeroScroll: View {
     
     @EnvironmentObject var scene : ViewManager
     
-    @State var avaliableSpace = UIScreen.main.bounds.width
-    
-    
     var body: some View {
         ScrollView(showsIndicators: false) {
             LazyVStack(spacing: 11) {
@@ -22,7 +19,7 @@ struct BoardHeroScroll: View {
                     Image(board.heroImage)
                         .resizable()
                         .scaledToFit()
-                        .frame(maxWidth: avaliableSpace)
+                        .frame(maxWidth: scene.widthAvailableSpace)
                         .padding(.trailing,60)
                         .shadow(radius: 5)
                         .onTapGesture {

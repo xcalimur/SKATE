@@ -57,6 +57,9 @@ struct ItemDetailView: View {
                                 .shadow(color: .white, radius: 2)
                         }
                         .padding(.top, 10)
+                        .onTapGesture {
+                            scene.addToCart(board: item)
+                        }
                   
 
                 }

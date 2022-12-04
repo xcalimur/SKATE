@@ -33,7 +33,11 @@ struct CartView: View {
                     Text("\(scene.cart.count) items")
                         .font(.caption)
                     
-                    Divider()
+
+                    
+                    CartItemView()
+                    
+                    
                     Spacer()
                     RoundedRectangle(cornerRadius: 15)
                         .fill(.secondary)
@@ -63,6 +67,6 @@ struct CartView: View {
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
         CartView()
-            .environmentObject(ViewManager(cart: [], skateboards: [Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90")]))
+            .environmentObject(ViewManager(cart: [Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90"),Skateboard(id: 2, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90"),Skateboard(id: 2, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90")], skateboards: []))
     }
 }

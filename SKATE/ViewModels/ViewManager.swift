@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ViewManager: ObservableObject {
     @Published var board = false
@@ -15,13 +16,14 @@ class ViewManager: ObservableObject {
     @Published var op = 0.0
     @Published var logoScale = 1.0
     @Published var itemDetail = false
-    @Published var selection = "placeholder"
-    @Published var itemViewOffset = 0.0
     @Published var cart: [Skateboard] = []
     @Published var skateboards: [Skateboard] = []
     @Published var selectedBoard = Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero3", name: "placeholder", price: "$89.99")
     
-    init(board: Bool = false, clothes: Bool = false, showCart: Bool = false, scaleCart: Double = 1.0, op: Double = 0.0, logoScale: Double = 1.0, itemDetail: Bool = false, selection: String = "placeholder", itemViewOffset: Double = 0.0, cart: [Skateboard], skateboards: [Skateboard], selectedBoard: Skateboard = Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero3", name: "placeholder", price: "$89.99")) {
+    let widthAvailableSpace = UIScreen.main.bounds.width
+    let heightAvailableSpace = UIScreen.main.bounds.height
+    
+    init(board: Bool = false, clothes: Bool = false, showCart: Bool = false, scaleCart: Double = 1.0, op: Double = 0.0, logoScale: Double = 1.0, itemDetail: Bool = false, cart: [Skateboard], skateboards: [Skateboard], selectedBoard: Skateboard = Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero3", name: "placeholder", price: "$89.99")) {
         self.board = board
         self.clothes = clothes
         self.showCart = showCart
@@ -29,8 +31,6 @@ class ViewManager: ObservableObject {
         self.op = op
         self.logoScale = logoScale
         self.itemDetail = itemDetail
-        self.selection = selection
-        self.itemViewOffset = itemViewOffset
         self.cart = cart
         self.skateboards = skateboards
         self.selectedBoard = selectedBoard
@@ -68,6 +68,14 @@ class ViewManager: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.itemDetail = true
         }
+    }
+    
+    func addToCart(board: Skateboard) {
+        cart.append(board)
+    }
+    
+    func itemCountinCart(board: Skateboard) -> Int {
+        return cart.filter{$0.id == board.id}.count
     }
 
 }

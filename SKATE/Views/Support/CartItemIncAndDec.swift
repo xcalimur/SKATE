@@ -21,7 +21,7 @@ struct CartItemIncAndDec: View {
         HStack{
             RoundedRectangle(cornerRadius: 5)
                 .fill(.thickMaterial)
-                .shadow(radius: 3,y: 2)
+                .shadow(radius: 3,y: 3)
                 .overlay {
                     Image(systemName: "plus")
                         .font(.system(size: 20))

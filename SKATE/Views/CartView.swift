@@ -29,9 +29,11 @@ struct CartView: View {
                 VStack (alignment: .leading){
                     Text("Cart")
                         .font(Font.title.bold())
+                        .padding([.leading,.trailing])
                     
                     Text("\(scene.cart.count) items")
                         .font(.caption)
+                        .padding([.leading,.trailing])
                     
 
                     
@@ -49,9 +51,11 @@ struct CartView: View {
                                 .foregroundColor(Color.white)
                                 .shadow(color: .white, radius: 2)
                         }
-                        .padding(.top, 10)
+                    
+                        .padding()
+                        .padding()
                 }
-                .padding([.bottom,.leading,.trailing])
+              
                 
                 
                 

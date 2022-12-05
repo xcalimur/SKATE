@@ -14,38 +14,51 @@ struct CartItemView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             LazyVStack(spacing:0) {
+                
+                Divider()
+                
                 ForEach(scene.cart, id: \.id) {board in
-                    RoundedRectangle(cornerRadius: 15)
-                        .fill(.white)
-                        .frame(height: 100)
-                        .frame(maxWidth: scene.widthAvailableSpace,
-                               minHeight: 100)
-                        .padding()
-                        .shadow(radius: 10)
-                        .overlay {
-                            HStack {
-                                
-                                Image(systemName: "gear")
-                                    .font(.system(size: 50))
-                                    .frame(maxWidth: .infinity,maxHeight: .infinity)
-                                
-                                VStack(spacing: 0) {
-                                    
-                                    Text(board.name)
-                                        .font(.subheadline)
-                                    
-                                    Divider()
-                                        .padding([.top,.bottom], 10)
-                                    
-                                    CartItemIncAndDec(board: board)
-                                        
-                                    
-                                    
+                   
+                    VStack(spacing: 0) {
+                        
+                        HStack {
+                            
+                            Image(board.heroImage)
+                                .resizable()
+                                .scaledToFill()
+                                .padding([.top,.bottom,.trailing])
+                                .onTapGesture {
+                                    scene.popUpCart()
+                                    scene.showDetailView(board: board)
                                 }
-                                .padding()
+                            
+                            VStack(spacing: 0) {
+                                Spacer()
+                                Text(board.name)
+                                    .font(.subheadline)
+                                    
+                                Spacer()
+                                Divider()
+                                    .padding([.top,.bottom], 10)
+                                Spacer()
+                                
+                                CartItemIncAndDec(board: board)
+                                    .padding([.bottom,.trailing,.leading])
+                                
+                                Spacer()
+
                             }
-                            .padding()
+                            .padding(.trailing)
+                            
+                            
                         }
+                        
+                        
+                        
+                        Divider()
+                    }
+                        
+                       
                 }
             }
         }
@@ -55,6 +68,6 @@ struct CartItemView: View {
 struct CartItemView_Previews: PreviewProvider {
     static var previews: some View {
         CartItemView()
-            .environmentObject(ViewManager(cart: [Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90"),Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90")], skateboards: []))
+            .environmentObject(ViewManager(cart: [Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90"),Skateboard(id: 2, image: "board_1", heroImage: "board_3_hero", name: "Almost Radiate", price: "$90")], skateboards: []))
     }
 }

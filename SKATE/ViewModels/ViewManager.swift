@@ -16,8 +16,8 @@ class ViewManager: ObservableObject {
     @Published var op = 0.0
     @Published var logoScale = 1.0
     @Published var itemDetail = false
-    @Published var cart: [Skateboard] = []
     @Published var skateboards: [Skateboard] = []
+    @Published var cart: [Skateboard] = []
     @Published var selectedBoard = Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero3", name: "placeholder", price: "$89.99")
     
     let widthAvailableSpace = UIScreen.main.bounds.width

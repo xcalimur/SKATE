@@ -18,12 +18,13 @@ class ViewManager: ObservableObject {
     @Published var itemDetail = false
     @Published var skateboards: [Skateboard] = []
     @Published var cart: [Skateboard] = []
+    @Published var cartDictionary: [Skateboard:Int] = [:]
     @Published var selectedBoard = Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero3", name: "placeholder", price: "$89.99")
     
     let widthAvailableSpace = UIScreen.main.bounds.width
     let heightAvailableSpace = UIScreen.main.bounds.height
     
-    init(board: Bool = false, clothes: Bool = false, showCart: Bool = false, scaleCart: Double = 1.0, op: Double = 0.0, logoScale: Double = 1.0, itemDetail: Bool = false, cart: [Skateboard], skateboards: [Skateboard], selectedBoard: Skateboard = Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero3", name: "placeholder", price: "$89.99")) {
+    init(board: Bool = false, clothes: Bool = false, showCart: Bool = false, scaleCart: Double = 1.0, op: Double = 0.0, logoScale: Double = 1.0, itemDetail: Bool = false, skateboards: [Skateboard], cart: [Skateboard], cartDictionary: [Skateboard : Int], selectedBoard: Skateboard = Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero3", name: "placeholder", price: "$89.99")) {
         self.board = board
         self.clothes = clothes
         self.showCart = showCart
@@ -31,8 +32,9 @@ class ViewManager: ObservableObject {
         self.op = op
         self.logoScale = logoScale
         self.itemDetail = itemDetail
-        self.cart = cart
         self.skateboards = skateboards
+        self.cart = cart
+        self.cartDictionary = cartDictionary
         self.selectedBoard = selectedBoard
     }
     
@@ -71,7 +73,11 @@ class ViewManager: ObservableObject {
     }
     
     func addToCart(board: Skateboard) {
-        cart.append(board)
+       //cart.append(board)
+        
+        cartDictionary.updateValue((cartDictionary[board] ?? 0) + 1, forKey: board)
+    
+        dump(cartDictionary)
     }
     
     func itemCountinCart(board: Skateboard) -> Int {

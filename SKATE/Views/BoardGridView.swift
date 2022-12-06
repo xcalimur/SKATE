@@ -79,7 +79,7 @@ struct BoardGridView: View {
 struct BoardGridView_Previews: PreviewProvider {
     static var previews: some View {
         BoardGridView()
-            .environmentObject(ViewManager(cart: [], skateboards: []))
+            .environmentObject(ViewManager(skateboards: [], cart: [], cartDictionary: [:]))
             .background(.gray)
     }
 }

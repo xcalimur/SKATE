@@ -71,7 +71,7 @@ struct BoardSwipeView: View {
 struct BoardSwipeView_Previews: PreviewProvider {
     static var previews: some View {
         BoardSwipeView()
-            .environmentObject(ViewManager(cart: [], skateboards: []))
+            .environmentObject(ViewManager(skateboards: [], cart: [], cartDictionary: [:]))
             .background(.gray)
         
     }

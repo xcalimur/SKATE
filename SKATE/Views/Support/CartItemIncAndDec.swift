@@ -20,7 +20,7 @@ struct CartItemIncAndDec: View {
     var body: some View {
         HStack{
             RoundedRectangle(cornerRadius: 5)
-                .fill(.thickMaterial)
+                .fill(.white)
                 .shadow(radius: 3,y: 3)
                 .overlay {
                     Image(systemName: "plus")
@@ -42,7 +42,7 @@ struct CartItemIncAndDec: View {
             RoundedRectangle(cornerRadius: 5)
                 .fill(.black.opacity(0.1))
                 .overlay {
-                    Text("\(scene.itemCountinCart(board: board))")
+                    Text("\(scene.cartDictionary[board] ?? 0)")
                         .foregroundColor(.gray)
                 }
             
@@ -50,21 +50,22 @@ struct CartItemIncAndDec: View {
             Spacer()
             
             RoundedRectangle(cornerRadius: 5)
-                .fill(.thickMaterial)
+                .fill(scene.cartDictionary[board] == 1 ? .red: .white)
                 .shadow(radius: 3,y:3)
                 .overlay {
                     Image(systemName: "minus")
                         .font(.system(size: 20))
-                        .foregroundColor(.gray)
+                        .foregroundColor(scene.cartDictionary[board] == 1 ? .white: .gray)
                 }
                 .scaleEffect(minusSize)
+                .animation(.spring(dampingFraction: 0.8,blendDuration: 0.5), value: scene.cartDictionary[board])
                 .animation(.spring(dampingFraction: 0.8,blendDuration: 0.5), value: minusSize)
                 .onTapGesture {
                     minusSize = 0.7
-                    if count == 1 {
-                        //scene.cart.removeAll(where: {$0 == board})
+                    if scene.cartDictionary[board] == 1 {
+                        scene.cartDictionary.removeValue(forKey: board)
                     } else {
-                       
+                        scene.cartDictionary.updateValue((scene.cartDictionary[board] ?? 0) - 1, forKey: board)
                         
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -78,6 +79,6 @@ struct CartItemIncAndDec: View {
 struct CartItemIncAndDec_Previews: PreviewProvider {
     static var previews: some View {
         CartItemIncAndDec(board: Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90"))
-            .environmentObject(ViewManager(cart: [], skateboards: []))
+            .environmentObject(ViewManager(skateboards: [], cart: [], cartDictionary: [:]))
     }
 }

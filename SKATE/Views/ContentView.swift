@@ -78,7 +78,7 @@ struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {
         ContentView()
-            .environmentObject(ViewManager(cart: [], skateboards: []))
+            .environmentObject(ViewManager(skateboards: [], cart: [], cartDictionary: [:]))
             
     }
 }

@@ -38,7 +38,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environmentObject(ViewManager(cart: [], skateboards: []))
+            .environmentObject(ViewManager(skateboards: [], cart: [], cartDictionary: [:]))
             .background(.gray)
             .previewLayout(.fixed(width: 500, height: 200))
     }

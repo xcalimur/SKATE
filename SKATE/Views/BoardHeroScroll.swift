@@ -38,6 +38,6 @@ struct BoardHeroScroll: View {
 struct BoardHeroScroll_Previews: PreviewProvider {
     static var previews: some View {
         BoardHeroScroll()
-            .environmentObject(ViewManager(cart: [], skateboards: []))
+            .environmentObject(ViewManager(skateboards: [], cart: [], cartDictionary: [:]))
     }
 }

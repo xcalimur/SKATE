@@ -25,7 +25,7 @@ struct CartView: View {
                      .onTapGesture {
                          scene.showCart.toggle()
                      }
-                //Spacer()
+                
                 VStack (alignment: .leading){
                     Text("Cart")
                         .font(Font.title.bold())
@@ -35,30 +35,24 @@ struct CartView: View {
                         .font(.caption)
                         .padding([.leading,.trailing])
                     
-
-                    
                     CartItemView()
-                    
                     
                     Spacer()
                     RoundedRectangle(cornerRadius: 15)
-                        .fill(.secondary)
+                        .fill(scene.cartDictionary == [:] ? .gray : .red)
                         .frame(maxWidth: .infinity, maxHeight: 70)
                         .shadow(radius: 10)
+                        .animation(.spring(dampingFraction: 0.8,blendDuration: 0.5), value: scene.cartDictionary)
                         .overlay {
-                            Text("Check out")
+                            Text("Check Out")
                                 .font(Font.headline.bold())
                                 .foregroundColor(Color.white)
                                 .shadow(color: .white, radius: 2)
                         }
-                    
                         .padding()
                         .padding()
                 }
-              
-                
-                
-                
+
                 Spacer()
                 
             }
@@ -71,6 +65,6 @@ struct CartView: View {
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
         CartView()
-            .environmentObject(ViewManager(cart: [Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90"),Skateboard(id: 2, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90"),Skateboard(id: 2, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90")], skateboards: []))
+            .environmentObject(ViewManager(skateboards: [], cart: [], cartDictionary: [:]))
     }
 }

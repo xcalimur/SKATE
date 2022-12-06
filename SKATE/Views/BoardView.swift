@@ -64,7 +64,7 @@ struct BoardView: View {
 struct BoardView_Previews: PreviewProvider {
     static var previews: some View {
         BoardView()
-            .environmentObject(ViewManager(cart: [], skateboards: [Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90")]))
+            .environmentObject(ViewManager(skateboards: [Skateboard(id: 1, image: "board_1", heroImage: "board_1_hero", name: "Almost Radiate", price: "$90")], cart: [], cartDictionary: [:]))
             .background(.gray)
     }
 }

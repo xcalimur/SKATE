@@ -1,3 +1,3 @@
 # SKATE
-
-![](https://github.com/xcalimur/SKATE/blob/main/skate_demo_01-10-23.gif)
+E-commerce app that focuses on promoting street-style and skateboarding culture
+![](https://github.com/xcalimur/SKATE/blob/main/skate_demo_1.gif)

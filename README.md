@@ -6,3 +6,5 @@
 
 ![](https://github.com/xcalimur/SKATE/blob/main/skate_demo_1.gif)
 ![](https://github.com/xcalimur/SKATE/blob/main/skate_demo_2.gif)
+
+Up Next: skatboard customizer, including board, wheels, and trucks
